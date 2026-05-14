@@ -1,0 +1,16 @@
+Team A Summary
+====================
+Feasible solutions found: 450
+
+Best solution metrics:
+- soft_conflict_pairs: 0.0
+- avg_city_entropy: 2.0
+- strength_balance_std: 6.2099
+- final_score: 187.5803
+
+Top solutions:
+1. score=187.5803, conflicts=0.0, entropy=2.0, balance_std=6.2099
+2. score=186.4261, conflicts=0.0, entropy=2.0, balance_std=6.7869
+3. score=186.1166, conflicts=0.0, entropy=2.0, balance_std=6.9417
+4. score=186.0089, conflicts=0.0, entropy=2.0, balance_std=6.9955
+5. score=185.5173, conflicts=0.0, entropy=2.0, balance_std=7.2414
