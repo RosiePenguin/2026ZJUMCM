@@ -1,6 +1,6 @@
 # 2026 ZJU MCM Team Project
 
-这是一个面向浙大数模校赛的简洁 Python 项目。项目结构按最终提交时更自然的“问题模块”组织，而不是按成员拆目录。
+这是一个面向浙大数模校赛的简洁 Python 项目。项目结构按最终提交时更自然的“问题模块”组织。
 
 ## 推荐环境
 
@@ -60,7 +60,7 @@ python scripts/run_problem1.py
 - 队员 C：
   主要在 `src/problem34/` 写代码，运行入口是 `scripts/run_problem34.py`，输出结果放 `results/problem34/`，论文相关材料放 `docs/problem34/`。
 
-这样做的好处是最后提交代码时结构很清楚：按题目功能分，而不是按成员名字分。
+这样做的好处是最后提交代码时结构很清楚：按题目功能分。
 
 ## 当前已经完成的内容
 
@@ -111,20 +111,3 @@ python scripts/run_problem1.py
 - 每完成一小块就提交一次
 - 合并到主分支前先确保脚本能跑通
 
-## 关于 GitHub 上传
-
-你刚发的链接：
-
-- `https://github.com/users/RosiePenguin/projects/1`
-
-这不是 Git 仓库链接，而是 GitHub Projects 页面链接，所以不能用来 `git push`。
-
-真正可用于推送的仓库链接一般长这样：
-
-- `https://github.com/RosiePenguin/仓库名.git`
-
-或者：
-
-- `git@github.com:RosiePenguin/仓库名.git`
-
-你只要把真正的仓库链接发给我，我就可以继续帮你把本地仓库连上并推送。
