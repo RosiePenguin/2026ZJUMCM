@@ -5,7 +5,6 @@
 ## 文件
 
 - `main.tex`：论文主文件
-- `assets/school_cover.pdf`：由学校封面文档转换得到的封面 PDF
 - `build.ps1`：本地编译脚本
 - `out/`：编译输出目录
 
@@ -26,4 +25,4 @@ xelatex -interaction=nonstopmode -output-directory=out main.tex
 
 建议使用 XeLaTeX，以保证中文、数学公式与图片引用正常。
 
-当前模板已经把学校封面作为第 1 页并入，摘要从第 2 页开始。
+当前模板已经将学校封面内容按正式版式重排为 LaTeX 第 1 页，摘要从第 2 页开始。

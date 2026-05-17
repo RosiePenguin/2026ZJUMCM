@@ -45,36 +45,55 @@
 \titleformat{\subsection}{\zihao{-4}\bfseries}{\thesubsection}{0.75em}{}
 \titleformat{\subsubsection}{\zihao{5}\bfseries}{\thesubsubsection}{0.75em}{}
 
-\newcommand{\coverpageoverlay}{%
-  \thispagestyle{empty}%
-  \begin{tikzpicture}[remember picture,overlay]%
-    \node[anchor=north west,font=\fontsize{17pt}{20pt}\selectfont] at ([xshift=5.0cm,yshift=-2.45cm]current page.north west) {46};%
-    \node[anchor=north west,font=\fontsize{20pt}{22pt}\selectfont] at ([xshift=12.7cm,yshift=-3.85cm]current page.north west) {$\checkmark$};%
-    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=7.55cm,yshift=-9.95cm]current page.north west) {张若希};%
-    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=12.75cm,yshift=-9.95cm]current page.north west) {万里行};%
-    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=17.95cm,yshift=-9.95cm]current page.north west) {全炳旭};%
-    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=7.55cm,yshift=-11.72cm]current page.north west) {3240105081};%
-    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=12.75cm,yshift=-11.72cm]current page.north west) {3240105071};%
-    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=17.95cm,yshift=-11.72cm]current page.north west) {3240105082};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=7.55cm,yshift=-14.0cm]current page.north west) {竺可桢学院};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=12.75cm,yshift=-14.0cm]current page.north west) {计算机科学与技术学院};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=17.95cm,yshift=-14.0cm]current page.north west) {竺可桢学院};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{12.5pt}{15pt}\selectfont] at ([xshift=7.55cm,yshift=-16.7cm]current page.north west) {图灵班（计算机科学与技术）};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=12.75cm,yshift=-16.7cm]current page.north west) {人工智能};%
-    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{12.5pt}{15pt}\selectfont] at ([xshift=17.95cm,yshift=-16.7cm]current page.north west) {图灵班（计算机科学与技术）};%
-    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=7.55cm,yshift=-19.35cm]current page.north west) {19706868927};%
-    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=17.95cm,yshift=-19.35cm]current page.north west) {15972240160};%
-    \node[anchor=center,text width=4.2cm,font=\fontsize{12.2pt}{14.5pt}\selectfont] at ([xshift=7.55cm,yshift=-21.35cm]current page.north west) {3240105081@zju.edu.cn};%
-    \node[anchor=center,text width=4.2cm,font=\fontsize{12.2pt}{14.5pt}\selectfont] at ([xshift=17.95cm,yshift=-21.35cm]current page.north west) {quanbx@zju.edu.cn};%
-  \end{tikzpicture}%
-}
-
 \begin{document}
 
-\includepdf[
-  pages=1,
-  pagecommand={\coverpageoverlay}
-]{assets/school_cover.pdf}
+\thispagestyle{empty}
+\begin{center}
+{\zihao{1}\bfseries 浙江大学第二十四届\par}
+\vspace{0.35cm}
+{\zihao{1}\bfseries 大学生数学建模竞赛\par}
+\vspace{1.3cm}
+{\zihao{3}2026年5月8日－5月18日\par}
+\end{center}
+
+\vspace{1.8cm}
+\noindent
+\hspace*{2.0cm}{\zihao{2}团队编号\ \underline{\makebox[3.0cm][c]{46}}}\par
+\vspace{0.25cm}
+\noindent
+\hspace*{2.0cm}{\zihao{2}题\quad 目\qquad A \qquad B$\checkmark$}\par
+\noindent
+\hspace*{1.8cm}{\zihao{-3}（在所选题目上打勾）}\par
+
+\vspace{0.6cm}
+\renewcommand{\arraystretch}{1.9}
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}m{1.9cm}|>{\centering\arraybackslash}m{4.6cm}|>{\centering\arraybackslash}m{4.6cm}|>{\centering\arraybackslash}m{4.6cm}|}
+\hline
+ & 参赛队员1 & 参赛队员2 & 参赛队员3 \\
+\hline
+姓名 & 张若希 & 万里行 & 全炳旭 \\
+\hline
+学号 & 3240105081 & 3240105071 & 3240105082 \\
+\hline
+院（系） & 竺可桢学院 & 计算机科学与技术学院 & 竺可桢学院 \\
+\hline
+专业 & 图灵班（计算机科学与技术） & 人工智能 & 图灵班（计算机科学与技术） \\
+\hline
+手机 & 19706868927 &  & 15972240160 \\
+\hline
+Email & 3240105081@zju.edu.cn &  & quanbx@zju.edu.cn \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1.6cm}
+\begin{center}
+{\zihao{2}\bfseries 浙江大学本科生院\par}
+\vspace{0.35cm}
+{\zihao{2}\bfseries 浙江大学数学建模实践基地\par}
+\end{center}
+\clearpage
 
 \pagenumbering{gobble}
 \thispagestyle{empty}
