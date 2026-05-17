@@ -1,0 +1,16 @@
+Problem 4 TOPSIS Weights
+========================
+Final ranking uses pre-specified priority weights to avoid noise-level indicators dominating the recommendation.
+Entropy weights are retained as a diagnostic comparison, not as the final decision rule.
+
+Priority weights used for final ranking:
+- champion_strength_mean (benefit): 0.250000
+- top8_quarterfinal_rate (benefit): 0.300000
+- top4_round32_elimination_rate (cost): 0.350000
+- high_travel_quarterfinal_rate (benefit): 0.100000
+
+Diagnostic entropy weights:
+- champion_strength_mean (benefit): 0.167644
+- top8_quarterfinal_rate (benefit): 0.226122
+- top4_round32_elimination_rate (cost): 0.375029
+- high_travel_quarterfinal_rate (benefit): 0.231204

@@ -1,0 +1,22 @@
+Problem 3 Venue Selection Summary
+=================================
+Model: entropy-weighted multi-objective discrete facility-location model with venue-capacity, access and soft home-advantage terms.
+
+Recommended venues:
+1. 三门县: G01+G02, avg_distance=163.65 km, max_distance=209.14 km, score=47.04
+2. 诸暨市: G03+G12, avg_distance=120.81 km, max_distance=157.0 km, score=61.51
+3. 仙居县: G04+G09, avg_distance=94.14 km, max_distance=145.57 km, score=61.68
+4. 丽水市: G05+G15, avg_distance=105.25 km, max_distance=153.06 km, score=62.2
+5. 义乌市: G06+G14, avg_distance=136.61 km, max_distance=176.51 km, score=59.01
+6. 东阳市: G07+G10, avg_distance=106.19 km, max_distance=150.84 km, score=63.64
+7. 磐安县: G08+G11, avg_distance=162.17 km, max_distance=214.82 km, score=44.07
+8. 金华市: G13+G16, avg_distance=133.8 km, max_distance=181.39 km, score=56.46
+
+Aggregate metrics:
+- venue_count: 8
+- covered_groups: G01,G02,G03,G04,G05,G06,G07,G08,G09,G10,G11,G12,G13,G14,G15,G16
+- mean_assignment_avg_distance_km: 127.83
+- overall_max_distance_km: 214.82
+- total_assignment_score: 455.61
+- total_impact_score: 450.23
+- assignments_with_home_penalty: 0

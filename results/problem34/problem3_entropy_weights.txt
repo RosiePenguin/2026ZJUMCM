@@ -1,0 +1,37 @@
+Entropy Weight Method — Computed Weights
+========================================
+
+Weights are derived via the Entropy Weight Method (熵权法).
+For each indicator group, a normalised decision matrix is built from all
+64 regions (sub-indicator level) or all 7,680 pair-venue combinations
+(objective level). The entropy of each column is computed, and the
+information utility d_j = 1 - e_j determines the final weight.
+
+Impact sub-indicator weights (64-region entropy):
+  population       = 0.219924
+  gdp              = 0.360179
+  transport        = 0.192125
+  sports_atmosphere = 0.227773
+  sum              = 1.000000
+
+Capacity sub-indicator weights (64-region entropy):
+  sports_base       = 0.091216
+  stadium_capacity  = 0.383891
+  rail_access       = 0.374049
+  airport_access    = 0.150844
+  sum               = 1.000000
+
+Objective-level weights (7680 pair-venue entropy):
+  avg_travel    = 0.145361
+  worst_travel  = 0.680476
+  fairness      = 0.022698
+  impact        = 0.061259
+  capacity      = 0.090206
+  home_penalty  = 8.0  (fixed, not entropy-derived)
+  sum           = 1.000000
+
+Interpretation:
+- Higher weight → the indicator varies more across alternatives, carrying
+  more discriminative information.
+- Lower weight → the indicator is more uniform across alternatives and
+  contributes less to differentiating good venues from poor ones.
