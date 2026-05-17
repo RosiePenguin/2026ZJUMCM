@@ -4,3 +4,11 @@ src/**/__pycache__/
 *.pyc
 .DS_Store
 .matplotlib/
+latex/out/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+~$*.doc
+~$*.docx
