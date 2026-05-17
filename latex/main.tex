@@ -4,6 +4,8 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs,longtable,array,multirow}
 \usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{tikz}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
@@ -43,19 +45,36 @@
 \titleformat{\subsection}{\zihao{-4}\bfseries}{\thesubsection}{0.75em}{}
 \titleformat{\subsubsection}{\zihao{5}\bfseries}{\thesubsubsection}{0.75em}{}
 
+\newcommand{\coverpageoverlay}{%
+  \thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]%
+    \node[anchor=north west,font=\fontsize{17pt}{20pt}\selectfont] at ([xshift=5.0cm,yshift=-2.45cm]current page.north west) {46};%
+    \node[anchor=north west,font=\fontsize{20pt}{22pt}\selectfont] at ([xshift=12.7cm,yshift=-3.85cm]current page.north west) {$\checkmark$};%
+    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=7.55cm,yshift=-9.95cm]current page.north west) {张若希};%
+    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=12.75cm,yshift=-9.95cm]current page.north west) {万里行};%
+    \node[anchor=center,font=\fontsize{15pt}{18pt}\selectfont] at ([xshift=17.95cm,yshift=-9.95cm]current page.north west) {全炳旭};%
+    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=7.55cm,yshift=-11.72cm]current page.north west) {3240105081};%
+    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=12.75cm,yshift=-11.72cm]current page.north west) {3240105071};%
+    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=17.95cm,yshift=-11.72cm]current page.north west) {3240105082};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=7.55cm,yshift=-14.0cm]current page.north west) {竺可桢学院};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=12.75cm,yshift=-14.0cm]current page.north west) {计算机科学与技术学院};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{13pt}{16pt}\selectfont] at ([xshift=17.95cm,yshift=-14.0cm]current page.north west) {竺可桢学院};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{12.5pt}{15pt}\selectfont] at ([xshift=7.55cm,yshift=-16.7cm]current page.north west) {图灵班（计算机科学与技术）};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=12.75cm,yshift=-16.7cm]current page.north west) {人工智能};%
+    \node[anchor=center,align=center,text width=4.2cm,font=\fontsize{12.5pt}{15pt}\selectfont] at ([xshift=17.95cm,yshift=-16.7cm]current page.north west) {图灵班（计算机科学与技术）};%
+    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=7.55cm,yshift=-19.35cm]current page.north west) {19706868927};%
+    \node[anchor=center,font=\fontsize{14pt}{17pt}\selectfont] at ([xshift=17.95cm,yshift=-19.35cm]current page.north west) {15972240160};%
+    \node[anchor=center,text width=4.2cm,font=\fontsize{12.2pt}{14.5pt}\selectfont] at ([xshift=7.55cm,yshift=-21.35cm]current page.north west) {3240105081@zju.edu.cn};%
+    \node[anchor=center,text width=4.2cm,font=\fontsize{12.2pt}{14.5pt}\selectfont] at ([xshift=17.95cm,yshift=-21.35cm]current page.north west) {quanbx@zju.edu.cn};%
+  \end{tikzpicture}%
+}
+
 \begin{document}
 
-\thispagestyle{empty}
-\vspace*{\fill}
-\begin{center}
-{\zihao{2}\bfseries “浙超”分组方案、抽签机制、赛点选择与赛制优化的一体化研究\par}
-\vspace{2cm}
-{\zihao{4}论文封面页占位\par}
-\vspace{0.8cm}
-{\zihao{-4}正式提交时，请将本页替换为学校统一封面。\par}
-\end{center}
-\vspace*{\fill}
-\clearpage
+\includepdf[
+  pages=1,
+  pagecommand={\coverpageoverlay}
+]{assets/school_cover.pdf}
 
 \pagenumbering{gobble}
 \thispagestyle{empty}
