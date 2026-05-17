@@ -1,0 +1,9 @@
+Problem 4 Entropy-TOPSIS Weights
+================================
+These entropy weights are diagnostic only; the final paper ranking uses priority weights.
+Benefit indicators are shifted by min; cost indicators are converted by max - value.
+
+- champion_strength_mean (benefit): 0.167644
+- top8_quarterfinal_rate (benefit): 0.226122
+- top4_round32_elimination_rate (cost): 0.375029
+- high_travel_quarterfinal_rate (benefit): 0.231204

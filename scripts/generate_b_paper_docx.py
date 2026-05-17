@@ -189,13 +189,13 @@ def build_doc() -> Document:
     ])
 
     add_heading(doc, "9 附录与支撑材料说明")
-    add_paragraph(doc, "根据竞赛要求，论文附录与支撑材料应完整包含全部可运行源程序、实际使用的软件名称和命令、自主查阅使用的数据与资料，而不应重复放入赛题已直接提供的数据文件。")
+    add_paragraph(doc, "按照竞赛要求，本文正文之外另附完整支撑材料，以保证论文结论的可复核性、程序结果的可复现性和数据来源的可追溯性。本文支撑材料由源程序代码、运行命令、自主查阅并整理的数据资料、关键结果输出文件和 AI 工具使用说明五部分构成。")
     add_bullets(doc, [
-        "源程序代码：src/problem1、src/problem2、src/problem34 下的全部 Python 文件。",
-        "运行脚本与命令：run_problem1.py、run_problem2.py、run_problem34.py、clean_problem3_manual_sources.py、generate_b_paper_docx.py。",
-        "自主查阅并整理的数据：region_metrics.csv、problem3_missing_fields_lookup.csv 及人工收集的 Excel 数据源。",
-        "结果支撑文件：problem1、problem2、problem34 对应的关键 csv、txt 与 png 输出文件。",
-        "AI 使用说明：docs/AI工具使用说明.md。",
+        "源程序代码包括 src/problem1、src/problem2、src/problem34 下的全部 Python 文件。",
+        "运行脚本与命令包括 run_problem1.py、run_problem2.py、run_problem34.py、clean_problem3_manual_sources.py 和 generate_b_paper_docx.py。",
+        "自主查阅并整理的数据包括 region_metrics.csv、problem3_missing_fields_lookup.csv 及人工收集的 Excel 数据源。",
+        "结果支撑文件包括 problem1、problem2、problem34 对应的关键 csv、txt 与 png 输出文件。",
+        "AI 工具使用说明单独整理为 docs/AI工具使用说明.md。",
     ])
 
     add_heading(doc, "附录 A AI 工具使用说明")

@@ -1,0 +1,10 @@
+﻿format_name,simulations,travel_threshold_km,travel_divisor,champion_strength_mean,top8_quarterfinal_rate,top4_round32_elimination_rate,high_travel_quarterfinal_rate,strongest_champion_rate
+seeded_reseeded,4000,100.0,50.0,82.4524,0.396,0.2596,0.0911,0.2935
+seeded_reseeded,4000,100.0,70.0,82.4342,0.3942,0.2619,0.0951,0.2742
+seeded_reseeded,4000,100.0,90.0,82.4764,0.3971,0.2586,0.0952,0.2717
+seeded_reseeded,4000,150.0,50.0,82.673,0.401,0.2589,0.0935,0.2993
+seeded_reseeded,4000,150.0,70.0,82.594,0.3957,0.2596,0.0976,0.289
+seeded_reseeded,4000,150.0,90.0,82.3954,0.3946,0.2566,0.0978,0.2752
+seeded_reseeded,4000,200.0,50.0,82.5685,0.3968,0.2577,0.0993,0.2853
+seeded_reseeded,4000,200.0,70.0,82.4252,0.3908,0.2646,0.1011,0.2785
+seeded_reseeded,4000,200.0,90.0,82.428,0.3968,0.2631,0.0989,0.2705

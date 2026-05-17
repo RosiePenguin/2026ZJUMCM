@@ -1,0 +1,65 @@
+Problem 3 Data Quality Report
+=============================
+Data sources:
+- 2025 Zhejiang Statistical Yearbook tables (2024 data):
+   - 17-25: main indicators (population, GDP, fiscal)
+   - 17-26: year-end population (urban/rural split)
+   - 17-34: passenger and freight volume
+   - 17-35: highway mileage, expressway, auto count
+   - 17-42: culture and health (sports venues, hospitals)
+- data/raw/problem3_missing_fields_lookup.csv: manually collected
+  rail station, airport and representative venue fields.
+- Prefecture-city values aggregated from constituent district rows.
+- Coordinates: manually curated administrative-center coordinates.
+
+Quality scope:
+- Core statistical indicators are quality grade A because they come from
+  official yearbook tables.
+- Rail station, airport, stadium name and stadium capacity fields are
+  auxiliary manual lookup fields. Their row-level status is encoded as
+  A_core; aux_verified, A_core; aux_partial or A_core; aux_verified(在建).
+
+Known data gaps:
+- Urban rail transit (metro) passenger data is missing for Hangzhou, Ningbo,
+  and Shaoxing in the yearbook because the district-level table does not
+  separately report metro system statistics. This may understate transport_score
+  for these cities. Paper should note this limitation.
+- Blank expressway_km, passenger_volume_10k, rail_transit_passenger_10k
+  and auto_count values are treated as 0 in the transport composite. For
+  rail_transit_passenger_10k, this only means the yearbook cell is blank;
+  it is not interpreted as no passenger rail station.
+- Stadium capacity is still blank for 10 regions: 云和县、仙居县、岱山县、嵊泗县、常山县、平湖市、松阳县、缙云县、象山县、龙游县.
+- Stadium name is still blank for 1 regions: 缙云县.
+- Some auxiliary venue records are partial or under construction and should
+  not be treated as official completed venue-capacity data.
+
+Score construction:
+- population_score / gdp_score: log-minmax normalization of raw values.
+- transport_score: composite of log(road_km), log(expressway_km),
+  log(passenger_volume), log(rail_passenger), log(auto_count), then minmax.
+- football_score: composite of absolute venue count (70%) and venue density
+  per 10k population (30%), then log-minmax normalization. It is a public
+  sports-atmosphere proxy, not a football-only statistic.
+- sports_base_score: log-minmax normalization of broad sports venue count;
+  this is interpreted as public sports infrastructure, not match-ready stadiums.
+- capacity_score: entropy-weighted composite of sports-base,
+  stadium-capacity, rail-access and airport-access scores.
+- Missing stadium capacity or stadium name receives the lowest capacity tier.
+- partial auxiliary venue records multiply the stadium-capacity subscore by
+  0.85; in-progress venue records multiply that subscore by 0.75.
+- Rail access is 0 for no passenger rail, 60 for nearest/limited service,
+  and 100 for explicit local passenger rail stations.
+- Airport access follows the conservative distance bands documented in
+  docs/problem34/problem3_model_notes.md.
+
+Auxiliary quality flags:
+- partial regions (19): 三门县、云和县、仙居县、兰溪市、天台县、岱山县、嵊泗县、常山县、平湖市、庆元县、景宁畲族自治县、松阳县、永康市、江山市、磐安县、绍兴市、缙云县、遂昌县、龙游县.
+- in-progress venue regions (4): 余姚市、平阳县、开化县、武义县.
+
+Use in paper:
+- Cite "2025年浙江统计年鉴" as primary data source.
+- Acknowledge that metro data is missing for Hangzhou/Ningbo/Shaoxing.
+- Describe rail, airport and representative venue fields as manually
+  collected public-information supplements, not official yearbook indicators.
+- Concrete venue capacity is now used in capacity_score, but blank/partial/
+  in-progress records are conservatively downweighted.

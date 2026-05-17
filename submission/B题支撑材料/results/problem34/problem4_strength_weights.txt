@@ -1,0 +1,9 @@
+Problem 4 Strength Proxy Weights
+================================
+Strength is synthesized from region_metrics.csv by entropy weights over 64 regions, then min-max scaled to [60, 90].
+
+- population_score: 0.184290
+- gdp_score: 0.301823
+- transport_score: 0.160993
+- football_score: 0.190868
+- sports_base_score: 0.162026

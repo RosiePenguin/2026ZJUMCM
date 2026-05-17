@@ -1,0 +1,69 @@
+Problem 4 Competition Format Optimization Summary
+=================================================
+Monte Carlo simulations per format: 20000
+
+Final score: priority-weighted TOPSIS relative closeness across seven candidate formats.
+Priority weights:
+- champion_strength_mean: 0.250000
+- top8_quarterfinal_rate: 0.300000
+- top4_round32_elimination_rate: 0.350000
+- high_travel_quarterfinal_rate: 0.100000
+
+Diagnostic entropy weights, not used for final ranking:
+- champion_strength_mean: 0.167644
+- top8_quarterfinal_rate: 0.226122
+- top4_round32_elimination_rate: 0.375029
+- high_travel_quarterfinal_rate: 0.231204
+
+Compared formats:
+- current_random_draw: Current structure: 16 groups of 4, top 2 qualify, knockout draw is random.
+- random_draw_rest: Random knockout draw, but high-burden teams receive additional rest before knockout matches.
+- random_draw_reseeded: Random R32 draw followed by reseeding from R16 onward.
+- group_rank_seeded: Keep the same group stage, but pair group winners with runners-up in R32 and avoid same-group rematches.
+- group_rank_seeded_rest: Use group-winner versus runner-up R32 seeding and add rest protection for high-burden teams.
+- seeded_reseeded: Use group-rank seeding in R32 and reseed later rounds without travel-rest mitigation.
+- seeded_reseeded_rest: Use group-rank seeding in R32, reseed later rounds, and reduce travel fatigue for high-burden teams by adding rest days.
+
+Key results:
+- current_random_draw: champion_strength_mean=82.3054, top8_quarterfinal_rate=0.3817, top4_round32_elimination_rate=0.2831, high_travel_quarterfinal_rate=0.0995, priority_topsis_score=0.258954, entropy_topsis_score=0.284859
+- random_draw_rest: champion_strength_mean=82.0921, top8_quarterfinal_rate=0.3794, top4_round32_elimination_rate=0.2857, high_travel_quarterfinal_rate=0.1026, priority_topsis_score=0.177112, entropy_topsis_score=0.364895
+- random_draw_reseeded: champion_strength_mean=82.4141, top8_quarterfinal_rate=0.3875, top4_round32_elimination_rate=0.2852, high_travel_quarterfinal_rate=0.0977, priority_topsis_score=0.398777, entropy_topsis_score=0.304162
+- group_rank_seeded: champion_strength_mean=82.3523, top8_quarterfinal_rate=0.3894, top4_round32_elimination_rate=0.2575, high_travel_quarterfinal_rate=0.098, priority_topsis_score=0.662609, entropy_topsis_score=0.611188
+- group_rank_seeded_rest: champion_strength_mean=82.2552, top8_quarterfinal_rate=0.3878, top4_round32_elimination_rate=0.258, high_travel_quarterfinal_rate=0.1012, priority_topsis_score=0.596676, entropy_topsis_score=0.684461
+- seeded_reseeded: champion_strength_mean=82.5267, top8_quarterfinal_rate=0.3968, top4_round32_elimination_rate=0.2551, high_travel_quarterfinal_rate=0.0964, priority_topsis_score=0.822888, entropy_topsis_score=0.635105
+- seeded_reseeded_rest: champion_strength_mean=82.3047, top8_quarterfinal_rate=0.3931, top4_round32_elimination_rate=0.2591, high_travel_quarterfinal_rate=0.0995, priority_topsis_score=0.706284, entropy_topsis_score=0.690528
+
+Main quantitative deltas relative to current_random_draw:
+- group_rank_seeded lowers top4 R32 elimination by 2.56 percentage points.
+- seeded_reseeded raises top8 quarterfinal rate by 1.51 percentage points and lowers top4 R32 elimination by 2.80 percentage points.
+- seeded_reseeded slightly reduces high-travel teams' quarterfinal rate by 0.31 percentage points relative to random draw; this is a conscious trade-off: the format prioritises competitive integrity, and the travel-fairness difference is smaller than the simulation noise floor.
+- champion_strength_mean varies by only 0.43 across all seven formats (range [82.09, 82.53]). This implies the tournament format mainly affects which strong teams reach the later rounds, not who ultimately wins the championship.
+
+Weight sensitivity winners:
+- core_only=seeded_reseeded, low_travel=seeded_reseeded, baseline_priority=seeded_reseeded, travel_sensitive=seeded_reseeded, travel_high=seeded_reseeded_rest
+
+Fatigue parameter sensitivity for recommended format:
+- top8_quarterfinal_rate range: 0.3908 to 0.4010.
+- top4_round32_elimination_rate range: 0.2566 to 0.2646.
+
+Recommended format:
+- seeded_reseeded
+
+Quantitative recommendation for the paper:
+- Keep 16 groups of 4 and single round robin; it gives each team 3 guaranteed matches and keeps total match count manageable.
+- In R32, use group winners as seeded teams and runners-up as unseeded teams; avoid same-group rematches.
+- From R16 onward, reseed by group rank, group points, goal difference and strength proxy, so high-performing teams are less likely to meet immediately.
+
+Qualitative safeguards outside the simulation model:
+- In the last group round, start the two matches in the same group simultaneously to reduce strategic collusion.
+- Consider at least one additional rest day for high-travel teams as an athlete welfare rule; the simulation does not show a robust competition-performance gain from this rule.
+
+Top teams under recommended format:
+- 杭州市队: qualify=0.9917, quarterfinal=0.6613, champion=0.2847
+- 宁波市队: qualify=0.9877, quarterfinal=0.5516, champion=0.1466
+- 温州市队: qualify=0.9829, quarterfinal=0.4763, champion=0.0894
+- 绍兴市队: qualify=0.9889, quarterfinal=0.4717, champion=0.0879
+- 义乌市队: qualify=0.8568, quarterfinal=0.3022, champion=0.041
+- 台州市队: qualify=0.9853, quarterfinal=0.382, champion=0.0447
+- 慈溪市队: qualify=0.1674, quarterfinal=0.0484, champion=0.0064
+- 乐清市队: qualify=0.8676, quarterfinal=0.2809, champion=0.0306
